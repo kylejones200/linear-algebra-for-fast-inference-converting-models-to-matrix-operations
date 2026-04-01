@@ -1,13 +1,43 @@
-# Linear Algebra for Fast Inference Converting Models to Matrix Operations
+# Linear Algebra for Fast Inference
 
-**Published:** 2025-05-15
-**Medium:** [https://medium.com/@kyle-t-jones/linear-algebra-for-fast-inference-converting-models-to-matrix-operations-9c2be3979711](https://medium.com/@kyle-t-jones/linear-algebra-for-fast-inference-converting-models-to-matrix-operations-9c2be3979711)
+This project demonstrates using linear algebra for fast inference in machine learning and data science.
 
-## About
+## Article
 
-Place the code for this article in this repository.
-The original article export is saved as `article.md`.
+Medium article: [Linear Algebra for Fast Inference](https://medium.com/@kylejones_47003/linearalgebrafastinference)
 
-## Files
+## Project Structure
 
-Add your `.ipynb`, `.py`, `.yaml`, `.js`, `.ts`, or other project files here.
+```
+.
+├── README.md           # This file
+├── main.py            # Main entry point
+├── config.yaml        # Configuration file
+├── requirements.txt   # Python dependencies
+├── src/               # Core functions
+│   ├── core.py        # Linear algebra inference functions
+│   └── plotting.py    # Tufte-style plotting utilities
+├── tests/             # Unit tests
+├── data/              # Data files
+└── images/            # Generated plots and figures
+```
+
+## Configuration
+
+Edit `config.yaml` to customize:
+- System dimensions (n variables, m equations)
+- Inference method (lstsq, pinv)
+- Output settings
+
+## Linear Algebra Methods
+
+Inference methods:
+- **Least Squares (lstsq)**: Standard least squares solution
+- **Pseudoinverse (pinv)**: Moore-Penrose pseudoinverse
+- **Fast Computation**: Optimized linear algebra operations
+
+## Caveats
+
+- By default, generates synthetic linear systems.
+- Method selection depends on system properties.
+- Large systems may require memory optimization.
