@@ -36,7 +36,7 @@ def calculate_inference_metrics(x_true: np.ndarray, x_pred: np.ndarray) -> Dict:
     }
 
 def plot_inference_results(x_true: np.ndarray, x_pred: np.ndarray, title: str, output_path: Path):
- """Plot inference results """
+    """Plot inference results """
     fig, ax = plt.subplots(figsize=(10, 6))
     
     ax.scatter(x_true, x_pred, alpha=0.6, color="#4A90A4", s=30, edgecolors='none')
