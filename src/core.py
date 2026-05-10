@@ -35,20 +35,21 @@ def calculate_inference_metrics(x_true: np.ndarray, x_pred: np.ndarray) -> Dict:
         'correlation': np.corrcoef(x_true, x_pred)[0, 1]
     }
 
-def plot_inference_results(x_true: np.ndarray, x_pred: np.ndarray, title: str, output_path: Path):
+def plot_inference_results(x_true: np.ndarray, x_pred: np.ndarray, title: str, output_path: Path, plot: bool = False):
     """Plot inference results """
-    fig, ax = plt.subplots(figsize=(10, 6))
+    if plot:
+        fig, ax = plt.subplots(figsize=(10, 6))
     
-    ax.scatter(x_true, x_pred, alpha=0.6, color="#4A90A4", s=30, edgecolors='none')
-    min_val = min(x_true.min(), x_pred.min())
-    max_val = max(x_true.max(), x_pred.max())
-    ax.plot([min_val, max_val], [min_val, max_val], 'r--', linewidth=1.2,
-           label='Perfect Inference')
+        ax.scatter(x_true, x_pred, alpha=0.6, color="#4A90A4", s=30, edgecolors='none')
+        min_val = min(x_true.min(), x_pred.min())
+        max_val = max(x_true.max(), x_pred.max())
+        ax.plot([min_val, max_val], [min_val, max_val], 'r--', linewidth=1.2,
+               label='Perfect Inference')
     
-    ax.set_xlabel("True Values")
-    ax.set_ylabel("Inferred Values")
-    ax.legend(loc='best')
+        ax.set_xlabel("True Values")
+        ax.set_ylabel("Inferred Values")
+        ax.legend(loc='best')
     
-    plt.savefig(output_path, dpi=100, bbox_inches="tight")
-    plt.close()
+        plt.savefig(output_path, dpi=100, bbox_inches="tight")
+        plt.close()
 
