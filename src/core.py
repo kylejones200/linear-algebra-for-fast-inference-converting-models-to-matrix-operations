@@ -24,8 +24,7 @@ def solve_linear_system(A: np.ndarray, b: np.ndarray, method: str = 'lstsq') -> 
         return np.linalg.lstsq(A, b, rcond=None)[0]
     elif method == 'pinv':
         return np.linalg.pinv(A) @ b
-    else:
-        raise ValueError(f"Unknown method: {method}")
+    raise ValueError(f"Unknown method: {method}")
 
 def calculate_inference_metrics(x_true: np.ndarray, x_pred: np.ndarray) -> Dict:
     """Calculate inference accuracy metrics."""

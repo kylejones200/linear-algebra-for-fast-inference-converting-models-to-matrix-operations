@@ -32,9 +32,9 @@ Edit `config.yaml` to customize:
 ## Linear Algebra Methods
 
 Inference methods:
-- **Least Squares (lstsq)**: Standard least squares solution
-- **Pseudoinverse (pinv)**: Moore-Penrose pseudoinverse
-- **Fast Computation**: Optimized linear algebra operations
+- Least Squares (lstsq): Standard least squares solution
+- Pseudoinverse (pinv): Moore-Penrose pseudoinverse
+- Fast Computation: Optimized linear algebra operations
 
 ## Caveats
 

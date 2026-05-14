@@ -8,7 +8,7 @@ canonical_link: "https://medium.com/@kyle-t-jones/linear-algebra-for-fast-infere
 # Linear Algebra for Fast Inference: Converting Models to Matrix Operations Machine learning models often feel like black boxes. But once trained,
 many models --- especially in supervised learning --- can be expressed...
 
-### **Linear Algebra for Fast Inference: Converting Models to Matrix Operations**
+### Linear Algebra for Fast Inference: Converting Models to Matrix Operations
 #### How batching and matrix ops unlock fast, scalable model deployment
 Machine learning models often feel like black boxes. But once trained, many models --- especially in supervised learning --- can be expressed as nothing more than matrix multiplications and vector additions. This isn't just a theoretical convenience. It makes inference fast. Matrix operations are the backbone of modern computing hardware, optimized in GPUs, TPUs, and even low-power edge devices.
 
@@ -57,10 +57,10 @@ Rewriting models as linear algebra gives us major benefits. 1/Speed: Matrix oper
 ### From Model to Matrix
 Most modern frameworks already expose this capability:
 
-- **scikit-learn:** `.coef_` and `.intercept_` for linear/logistic models
-- **PyTorch:** Export layers as `.weight` and `.bias` tensors
-- **TensorFlow/Keras:** Use `.get_weights()` to retrieve matrices
-- **ONNX Runtime:** Loads model graphs already compiled into matrix ops
+- scikit-learn: `.coef_` and `.intercept_` for linear/logistic models
+- PyTorch: Export layers as `.weight` and `.bias` tensors
+- TensorFlow/Keras: Use `.get_weights()` to retrieve matrices
+- ONNX Runtime: Loads model graphs already compiled into matrix ops
 
 You can also convert entire pipelines to optimized matrix graphs using libraries like ONNX, TorchScript, or TensorRT.
 
@@ -120,9 +120,9 @@ This example uses PyTorch to make predictions on a batch of 3 inputs. Internally
 
 This brings benefits in:
 
-- **Performance:** Batching reduces overhead. Instead of repeating weight access and matrix initialization for each input, you perform one large matrix operation.
-- **Parallelism:** GPUs process thousands of operations in parallel. Batching maximizes throughput by aligning your operations with the architecture.
-- **Scalability:** Modern serving frameworks like TensorFlow Serving, TorchServe, Triton, and ONNX Runtime automatically batch inputs before dispatching them to the inference engine.
+- Performance: Batching reduces overhead. Instead of repeating weight access and matrix initialization for each input, you perform one large matrix operation.
+- Parallelism: GPUs process thousands of operations in parallel. Batching maximizes throughput by aligning your operations with the architecture.
+- Scalability: Modern serving frameworks like TensorFlow Serving, TorchServe, Triton, and ONNX Runtime automatically batch inputs before dispatching them to the inference engine.
 
 Batching is the expected format for efficient model deployment. Whether you're running a REST API for predictions or serving a real-time recommender, always structure your inference pipeline to operate on batches.
 
