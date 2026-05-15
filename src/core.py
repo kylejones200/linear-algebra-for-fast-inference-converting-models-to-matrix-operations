@@ -1,9 +1,7 @@
 """Core functions for linear algebra for fast inference."""
 
 import numpy as np
-import pandas as pd
 from pathlib import Path
-from typing import Dict
 import matplotlib.pyplot as plt
 import logging
 
@@ -26,7 +24,7 @@ def solve_linear_system(A: np.ndarray, b: np.ndarray, method: str = 'lstsq') -> 
         return np.linalg.pinv(A) @ b
     raise ValueError(f"Unknown method: {method}")
 
-def calculate_inference_metrics(x_true: np.ndarray, x_pred: np.ndarray) -> Dict:
+def calculate_inference_metrics(x_true: np.ndarray, x_pred: np.ndarray) -> dict:
     """Calculate inference accuracy metrics."""
     return {
         'mse': np.mean((x_true - x_pred) ** 2),
