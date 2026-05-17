@@ -41,3 +41,11 @@ Inference methods:
 - By default, generates synthetic linear systems.
 - Method selection depends on system properties.
 - Large systems may require memory optimization.
+
+## Disclaimer
+
+Educational/demo code only. Not financial, safety, or engineering advice. Use at your own risk. Verify results independently before any production or operational use.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

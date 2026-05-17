@@ -47,23 +47,25 @@ def plot_inference_results(
     plot: bool = False,
 ):
     """Plot inference results"""
-    if plot:
-        fig, ax = plt.subplots(figsize=(10, 6))
+    if not plot:
+        return
 
-        ax.scatter(x_true, x_pred, alpha=0.6, color="#4A90A4", s=30, edgecolors="none")
-        min_val = min(x_true.min(), x_pred.min())
-        max_val = max(x_true.max(), x_pred.max())
-        ax.plot(
-            [min_val, max_val],
-            [min_val, max_val],
-            "r--",
-            linewidth=1.2,
-            label="Perfect Inference",
-        )
+    fig, ax = plt.subplots(figsize=(10, 6))
 
-        ax.set_xlabel("True Values")
-        ax.set_ylabel("Inferred Values")
-        ax.legend(loc="best")
+    ax.scatter(x_true, x_pred, alpha=0.6, color="#4A90A4", s=30, edgecolors="none")
+    min_val = min(x_true.min(), x_pred.min())
+    max_val = max(x_true.max(), x_pred.max())
+    ax.plot(
+        [min_val, max_val],
+        [min_val, max_val],
+        "r--",
+        linewidth=1.2,
+        label="Perfect Inference",
+    )
 
-        plt.savefig(output_path, dpi=100, bbox_inches="tight")
-        plt.close()
+    ax.set_xlabel("True Values")
+    ax.set_ylabel("Inferred Values")
+    ax.legend(loc="best")
+
+    plt.savefig(output_path, dpi=100, bbox_inches="tight")
+    plt.close()
