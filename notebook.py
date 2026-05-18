@@ -11,10 +11,10 @@ def main():
     model = LogisticRegression().fit(X, y)
     coefs = model.coef_
     intercepts = model.intercept_
-    preds = X @ coefs.T + intercepts
+    X @ coefs.T + intercepts
 
 
-def main() -> None:
+def main_alt() -> None:
     main()
 
 
